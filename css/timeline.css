@@ -1,0 +1,230 @@
+.timeline{
+  --uiTimelineMainColor: var(--timelineMainColor, #001418);
+  --uiTimelineSecondaryColor: var(--timelineSecondaryColor, #fff);
+
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.timeline:before{
+  content: "";
+  width: 2px;
+  height: 100%;
+  background-color: var(--uiTimelineMainColor);
+
+  position: absolute;
+  top: 0;
+}
+
+.timeline__group{
+  position: relative;
+}
+
+.timeline__group:not(:first-of-type){
+  margin-top: 4rem;
+}
+
+.timeline__year{
+  padding: .5rem 3.5rem;
+  color: var(--uiTimelineSecondaryColor);
+
+  background: linear-gradient(315deg, #ff0000, #ff9400, #eeff00, #179242, #ff0090, #f0a0d1, #a0f0df, #0bbd97);
+    background-size: 1000% 100%;
+    background-repeat: no-repeat;
+
+    -webkit-animation: AnimationName 59s ease infinite;
+    -moz-animation: AnimationName 59s ease infinite;
+    animation: AnimationName 59s ease infinite;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.timeline__box{
+  position: relative;
+}
+
+.timeline__box:not(:last-of-type){
+  margin-bottom: 30px;
+}
+
+.timeline__box:before{
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--uiTimelineMainColor);
+
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+
+.timeline__date{
+  min-width: 65px;
+  position: absolute;
+  left: 0;
+
+  box-sizing: border-box;
+  padding: .5rem 1.5rem;
+  text-align: center;
+
+  background-color: var(--uiTimelineMainColor);
+  color: var(--uiTimelineSecondaryColor);
+}
+
+.timeline__day{
+  font-size: 2rem;
+  display: block;
+  padding-left: 12px;
+}
+
+.timeline__month{
+  display: block;
+  font-size: .8em;
+  text-transform: uppercase;
+}
+
+.timeline__post{
+  padding: 1.5rem 2rem;
+  border-radius: 0;
+  border: 2px dotted var(--uiTimelineMainColor);
+  background-color: var(--uiTimelineSecondaryColor);
+  height: 120px;
+}
+
+.timeline__post .title{
+  color: black;
+  font-weight: bold;
+}
+.timeline__post .year{
+  color: black;
+}
+
+.timeline__content{
+  width: 100%;
+  float: left;
+}
+
+.timeline__content p{
+  width: 80%;
+  float: left;
+}
+
+.logo-nss{
+  float: right;
+}
+
+.logo-midel{
+  float: right;
+}
+
+.logo-gavisa{
+  float: right;
+}
+
+.logo-taller{
+  float: right;
+}
+
+/* Tablet :768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .timeline:before{
+    left: 30px;
+  }
+
+  .timeline__group{
+    padding-top: 55px;
+  }
+
+  .timeline__box{
+    padding-left: 80px;
+    width: 720px;
+  }
+
+  .timeline__box:before{
+    top: 50%;
+    transform: translateY(-50%); 
+  }  
+
+  .timeline__date{
+    top: 44%;
+    margin-top: -27px;
+  }
+}
+
+
+
+@media screen and (min-width: 641px){
+
+  .timeline:before{
+    left: 30px;
+  }
+
+  .timeline__group{
+    padding-top: 55px;
+  }
+
+  .timeline__box{
+    padding-left: 80px;
+  }
+
+  .timeline__box:before{
+    top: 50%;
+    transform: translateY(-50%);  
+  }  
+
+  .timeline__date{
+    top: 44%;
+    margin-top: -27px;
+  }
+}
+
+
+@media screen and (max-width: 640px){
+
+  .timeline{
+    margin-bottom: 40px;
+  }
+  .timeline:before{
+    left: 30px;
+  }
+
+  .timeline__post{
+    height: 200px;
+    padding: 1.5rem;
+  }
+
+  .timeline__group{
+    padding-top: 55px;
+  }
+
+  .timeline__box{
+    padding-left: 50px;
+    padding-top: 0;
+    width: 340px;
+  }
+
+  .timeline__day{
+    font-size: 1.2rem;
+  }
+
+  .timeline__box:before{
+    top: 60px;
+  }    
+
+  .timeline__date{
+    top: 34px;
+    padding: .5rem;
+  }
+
+  .logo-nss, .logo-midel, .logo-gavisa, .logo-taller{
+    float: left;
+    width: 120px;
+  }
+}
+
+.timeline{
+  --timelineMainColor: #001418;
+}
