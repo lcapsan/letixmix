@@ -44,11 +44,23 @@ loadComponent("header-placeholder", "/components/header.html", () => {
 
 /* ========= FOOTER ========= */
 loadComponent("footer-placeholder", "/components/footer.html", () => {
+
   const yearEl = document.getElementById("current-year");
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+
+  // Detectar si es la home
+  const currentPage =
+    window.location.pathname.split("/").pop();
+
+  if (currentPage === "" || currentPage === "index.html"|| currentPage === "contact.html") {
+    document.querySelector(".footer-section").classList.add("fixed-footer");
+    document.body.classList.add("home");
+  }
+
 });
+
 
 
 loadComponent("portfolio-placeholder", "../components/portfolio.html", () => {
@@ -132,6 +144,7 @@ $(window).on('load', function() {
 	/*----------------------
 		Portfolio layout
 	------------------------*/
+
 	var port_fi =  $('.portfolios-area .first-item'),
 		port_si =  $('.portfolios-area .second-item'),
 		port_intro_h =  $('.portfolio-intro').innerHeight();

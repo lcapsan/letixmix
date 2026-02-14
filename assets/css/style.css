@@ -78,6 +78,7 @@ h6 {
   color: #000;
   font-size: 34px;
   line-height: 0;
+
 }
 .subtitulo{
   color: #979797;
@@ -586,10 +587,26 @@ ol {
 .portfolio-thumb {
   display: block;
   width: 100%;
+
+  aspect-ratio: 4 / 3; /* puedes cambiar a 1/1, 3/2, 16/9 */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+
+  margin-bottom: 30px;
+  /*
+  display: block;
+  width: 100%;
   height: 600px;
   background-position: center center;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 30px;*/
+}
+
+.portfolio-thumb:hover {
+  transform: scale(1.03);
 }
 
 .portfolio-thumb::after {
@@ -905,11 +922,25 @@ transition: background-image 0.2s ease-in-out;
 /*------------------------
     Footer Section
 --------------------------*/
+/* footer normal */
 .footer-section {
-  /*padding: 80px 0;*/
-
-  margin-top: 120px;
+  position: relative;
 }
+
+/* footer fijo solo en home */
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-left: 60px;
+  padding-right: 60px;
+  width: 100%;
+}
+
+.home {
+  padding-bottom: 120px;
+}
+
 
 .footer-section .copyright {
   font-size: 12px;
@@ -1206,6 +1237,13 @@ transition: background-image 0.2s ease-in-out;
   .portfolio-item {
     height: 450px;
   }
+  .titulo{
+    font-size: 34px;
+  line-height: 1;
+  margin: 0;
+  display: inline-block;
+  transform: translateY(-18px);
+  }
 }
 
 /* Tablet :768px. */
@@ -1322,7 +1360,7 @@ transition: background-image 0.2s ease-in-out;
   }
 
   .footer-section{
-    margin-top: 70px;
+    /*margin-top: 70px;*/
   }
 
   .logo{
@@ -1355,6 +1393,9 @@ transition: background-image 0.2s ease-in-out;
   }
   .issuuembed{
     height: 400px;
+  }
+  .titulo{
+    line-height: 1.2;
   }
 }
 
