@@ -192,8 +192,10 @@
   }
 
   .timeline__post{
-    height: 200px;
+    min-height: 200px;
+    height: auto;
     padding: 1.5rem;
+    display: flow-root;
   }
 
   .timeline__group{
