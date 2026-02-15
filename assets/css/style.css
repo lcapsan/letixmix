@@ -1397,6 +1397,9 @@ transition: background-image 0.2s ease-in-out;
   .titulo{
     line-height: 1.2;
   }
+  .fixed-footer{
+    padding: 0;
+  }
 }
 
 /* small Mobile :320px. */
