@@ -1267,9 +1267,6 @@ transition: background-image 0.2s ease-in-out;
     text-align: center;
   }
 
-  .timeline{
-    margin-bottom: 60px;
-  }
 
   .contact-form{
     margin-top:40px;
@@ -1400,6 +1397,7 @@ transition: background-image 0.2s ease-in-out;
   .fixed-footer{
     padding: 0;
   }
+  
 }
 
 /* small Mobile :320px. */

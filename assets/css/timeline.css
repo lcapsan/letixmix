@@ -1,232 +1,290 @@
+/* =========================
+   TIMELINE BASE
+========================= */
+
 .timeline{
+  --timelineMainColor: #001418;
+  --timelineSecondaryColor: #ffffff;  
   --uiTimelineMainColor: var(--timelineMainColor, #001418);
   --uiTimelineSecondaryColor: var(--timelineSecondaryColor, #fff);
-
   position: relative;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem 0;
 }
 
-.timeline:before{
-  content: "";
-  width: 2px;
-  height: 100%;
-  background-color: var(--uiTimelineMainColor);
 
+/* Línea vertical */
+
+.timeline::before{
+  content: "";
   position: absolute;
   top: 0;
+  left: 30px;
+  width: 2px;
+  height: 100%;
+  background-color: var(--timelineMainColor);
 }
+
+/* =========================
+   GROUP
+========================= */
 
 .timeline__group{
   position: relative;
+  padding-top: 55px;
 }
 
-.timeline__group:not(:first-of-type){
+.timeline__group:not(:first-child){
   margin-top: 4rem;
 }
 
+/* =========================
+   YEAR LABEL
+========================= */
+
 .timeline__year{
-  padding: .5rem 3.5rem;
-  color: var(--uiTimelineSecondaryColor);
-
-  background: linear-gradient(315deg, #ff0000, #ff9400, #eeff00, #179242, #ff0090, #f0a0d1, #a0f0df, #0bbd97);
-    background-size: 1000% 100%;
-    background-repeat: no-repeat;
-
-    -webkit-animation: AnimationName 59s ease infinite;
-    -moz-animation: AnimationName 59s ease infinite;
-    animation: AnimationName 59s ease infinite;
 
   position: absolute;
   left: 0;
   top: 0;
+
+  padding: .5rem 3.5rem;
+
+  color: white;
+
+  background: linear-gradient(
+    315deg,
+    #ff0000,
+    #ff9400,
+    #eeff00,
+    #179242,
+    #ff0090,
+    #f0a0d1,
+    #a0f0df,
+    #0bbd97
+  );
+
+  background-size: 1000% 100%;
+
+  animation: AnimationName 59s ease infinite;
+  -webkit-animation: AnimationName 59s ease infinite;
+    -moz-animation: AnimationName 59s ease infinite;
 }
+
+/* =========================
+   ITEM BOX
+========================= */
 
 .timeline__box{
+
   position: relative;
-}
-
-.timeline__box:not(:last-of-type){
+  padding-left: 80px;
+  padding-right: 15px;
   margin-bottom: 30px;
+  box-sizing: border-box;
 }
 
-.timeline__box:before{
+
+/* Línea horizontal */
+
+.timeline__box::before{
+
   content: "";
-  width: 100%;
-  height: 2px;
-  background-color: var(--uiTimelineMainColor);
 
   position: absolute;
-  left: 0;
-  z-index: -1;
+  left: 30px;
+  top: 30px;
+
+  width: 50px;
+  height: 2px;
+
+  background-color: var(--timelineMainColor);
 }
+
+/* =========================
+   ICON DATE
+========================= */
 
 .timeline__date{
-  min-width: 65px;
+
   position: absolute;
   left: 0;
+  top: 10px;
 
-  box-sizing: border-box;
-  padding: .5rem 1.5rem;
-  text-align: center;
-
+  background-color: var(--timelineMainColor);
+  color: white;
   background-color: var(--uiTimelineMainColor);
   color: var(--uiTimelineSecondaryColor);
+
+  padding: .5rem 0.5rem;
+  min-width: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .timeline__day{
-  font-size: 2rem;
+  font-size: 1.2rem;
   display: block;
   padding-left: 12px;
 }
 
-.timeline__month{
-  display: block;
-  font-size: .8em;
-  text-transform: uppercase;
-}
+/* =========================
+   POST CARD
+========================= */
 
 .timeline__post{
-  padding: 1.5rem 2rem;
-  border-radius: 0;
-  border: 2px dotted var(--uiTimelineMainColor);
-  background-color: var(--uiTimelineSecondaryColor);
-  height: 120px;
+
+  border: 2px dotted var(--timelineMainColor);
+
+  padding: 1.5rem;
+
+  background-color: white;
+
+  box-sizing: border-box;
+
+  transition: all .2s ease;
 }
 
-.timeline__post .title{
-  color: black;
-  font-weight: bold;
+
+/* Hover efecto profesional */
+
+.timeline__post:hover{
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
-.timeline__post .year{
-  color: black;
-}
+
+/* =========================
+   CONTENT FLEX
+========================= */
 
 .timeline__content{
-  width: 100%;
-  float: left;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
 }
+
+
+/* TEXTO */
 
 .timeline__content p{
-  width: 80%;
-  float: left;
+
+  margin: 0;
+
+  flex: 1;
 }
 
-.logo-nss{
-  float: right;
+
+.timeline__post .title{
+
+  font-weight: bold;
+  color: black;
 }
 
-.logo-midel{
-  float: right;
+.timeline__post .year{
+
+  color: black;
 }
 
-.logo-gavisa{
-  float: right;
+/* LOGOS */
+
+.timeline__content img{
+
+  width: 100px;
+  height: auto;
+  flex-shrink: 0;
 }
 
-.logo-taller{
-  float: right;
-}
+/* =========================
+   TABLET
+========================= */
 
-/* Tablet :768px. */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .timeline:before{
-    left: 30px;
-  }
-
-  .timeline__group{
-    padding-top: 55px;
-  }
+@media (max-width: 991px){
 
   .timeline__box{
-    padding-left: 80px;
-    width: 720px;
+
+    padding-left: 70px;
   }
 
-  .timeline__box:before{
-    top: 50%;
-    transform: translateY(-50%); 
-  }  
-
-  .timeline__date{
-    top: 44%;
-    margin-top: -27px;
+  .timeline::before {
+    height: 97%;
   }
+
+
 }
 
 
 
-@media screen and (min-width: 641px){
+/* =========================
+   MOBILE
+========================= */
 
-  .timeline:before{
-    left: 30px;
+@media (max-width: 640px){
+
+  .timeline::before{
+
+    left: 20px;
+    height: 98%;
   }
 
-  .timeline__group{
-    padding-top: 55px;
-  }
 
   .timeline__box{
-    padding-left: 80px;
+
+    padding-left: 55px;
   }
 
-  .timeline__box:before{
-    top: 50%;
-    transform: translateY(-50%);  
-  }  
+
+  .timeline__box::before{
+
+    left: 20px;
+    width: 35px;
+  }
+
 
   .timeline__date{
-    top: 44%;
-    margin-top: -27px;
+
+    /*left: -5px;*/
   }
+
+
+  .timeline__content{
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .timeline__content img{
+
+    margin-top: 10px;
+  }
+
 }
 
 
-@media screen and (max-width: 640px){
 
-  .timeline{
-    margin-bottom: 40px;
-  }
-  .timeline:before{
-    left: 30px;
-  }
+/* =========================
+   ANIMATION
+========================= */
 
-  .timeline__post{
-    min-height: 200px;
-    height: auto;
-    padding: 1.5rem;
-    display: flow-root;
-  }
+@keyframes AnimationName {
 
-  .timeline__group{
-    padding-top: 55px;
-  }
+  0%{background-position:0% 50%}
 
-  .timeline__box{
-    padding-left: 50px;
-    padding-top: 0;
-    width: 340px;
-  }
+  50%{background-position:100% 50%}
 
-  .timeline__day{
-    font-size: 1.2rem;
-  }
+  100%{background-position:0% 50%}
 
-  .timeline__box:before{
-    top: 60px;
-  }    
-
-  .timeline__date{
-    top: 34px;
-    padding: .5rem;
-  }
-
-  .logo-nss, .logo-midel, .logo-gavisa, .logo-taller{
-    float: left;
-    width: 120px;
-  }
 }
 
-.timeline{
-  --timelineMainColor: #001418;
-}
+
+
+
