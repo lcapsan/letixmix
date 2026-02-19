@@ -770,6 +770,15 @@ transition: background-image 0.2s ease-in-out;
 transition: background-image 0.2s ease-in-out;
 }
 
+.gavisa{
+  background-image: url("../img/projects/gavisa.png");  
+}
+.gavisa:hover{
+  background-image: url("../img/projects/gavisahover.png");
+  -webkit-transition: background-image 0.2s ease-in-out;
+transition: background-image 0.2s ease-in-out;
+}
+
 .pantonera{
   background-image: url("../img/projects/pantonera.png");  
 }
